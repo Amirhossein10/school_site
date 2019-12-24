@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}اخبار{% endblock title %}
+
+{% block container %}
+            <div id="main_news">
+                <div class="article_header">
+                    <h2>اخبار</h2>
+                </div>
+                {% for new in news %}
+                <div class="news_card">
+                    <span class="news_card_name">{{ new.title }}</span>
+                    <div class="news_card_description">
+                        <p>{{ new.text }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+{% endblock container %}
+
+        

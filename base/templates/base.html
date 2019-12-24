@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="دبستان فرهنگ, مدرسه فرهنگ"><!--Keywords of website-->
+        <meta name="author" content="محمد کاظمی، امیرحسین عبداللهی، Mohammad Kazemi, Amirhossein Abdollahi"><!--Authors-->
+        <meta name="description" content="سایت مدرسه فرهنگ مدرسه هوشمند"><!--Descriptions-->
+
+        <meta content="width=device-width,initial-scale=1.0" name="viewport"><!--For responsive-->
+
+        <title>{% block title %}{% endblock title %}</title>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+    </head>
+    <body onload="startclock(); timerONE=window.setTimeout">
+        <div id="header">
+            <h1>دبستان فرهنگ</h1>
+        </div>
+        <div id="nav">
+            <div id="site_clock">
+                <form name="clock" onsubmit="0" id="clock_form">
+                    <input type="text" name="face" size="5" value="" id="clock">
+                </form>
+            </div>
+            <div id="nav_links">
+                <a href="{% url 'base:index' %}">صفحه اصلی</a>
+                <a href="{% url 'base:news' %}">اخبار</a>
+                <a href="{% url 'base:gallery' %}">گالری</a>
+                <a href="{% url 'base:top_students' %}">دانش آموزان برتر</a>
+                <!-- <a href="top_teachers.html">معلمان برتر</a> -->
+                <a href="{% url 'base:about_school' %}">درباره مدرسه</a>
+                <a href="{% url 'base:contact_us' %}">تماس با مدرسه</a>
+            </div>
+            <div class="dropdown">
+                <div class="dropbtn">
+                    <button>منو</button>
+                    <div class="dropdown-content">
+                        <div id="dropdown_links">
+                            <a href="{% url 'base:index' %}">صفحه اصلی</a>
+                            <a href="{% url 'base:news' %}">اخبار</a>
+                            <a href="{% url 'base:gallery' %}">گالری</a>
+                            <a href="{% url 'base:top_students' %}">دانش آموزان برتر</a>
+                            <!-- <a href="top_teachers.html">معلمان برتر</a> -->
+                            <a href="{% url 'base:about_school' %}">درباره مدرسه</a>
+                            <a href="{% url 'base:contact_us' %}">تماس با مدرسه</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="container">
+            {% block container %}
+            {% endblock container %}
+        </div>
+        <div id="aside">
+            <div class="aside_article">
+                <div class="aside_header">
+                    <h4>خبر های تازه</h4>
+                </div>
+                <div class="aside_links">
+                    <a href="#">لینک</a>
+                    <a href="#">لینک</a>
+                    <a href="#">لینک</a>
+                    <a href="#">لینک</a>
+                </div>
+            </div>
+            <div class="aside_article">
+                <div class="aside_header">
+                    <h4>لینک های داخلی</h4>
+                </div>
+                <div class="aside_links">
+                    <a href="{% url 'base:index' %}">صفحه اصلی</a>
+                    <a href="{% url 'base:news' %}">اخبار</a>
+                    <a href="{% url 'base:gallery' %}">گالری</a>
+                    <a href="{% url 'base:top_students' %}">دانش آموزان برتر</a>
+                    <!-- <a href="top_teachers.html">معلمان برتر</a> -->
+                    <a href="{% url 'base:about_school' %}">درباره مدرسه</a>
+                    <a href="{% url 'base:contact_us' %}">تماس با مدرسه</a>
+                </div>
+            </div> 
+            <div class="aside_article">
+                <div class="aside_header">
+                    <h4>پیوندها</h4>
+                </div>
+                <div class="aside_links">
+                    <a href="#">آموزش و پرورش</a>
+                    <a href="#">فلان</a>
+                    <a href="#">فلان</a>
+                </div>
+            </div> 
+        </div>
+        <div id="footer">
+            <div id="footer_right">
+                <span class="footer_header">ارتباط با ما</span>
+                <div class="footer_text">
+                    <p>تلفن:</p>
+                    <p>ایمیل:</p>
+                    <p>کانال تلگرام:</p>
+                </div>
+            </div>
+            <div id="footer_left">
+                <span class="footer_header">لینک های مرتبط</span>
+                <div class="footer_text">
+                    <a href="#">آموزش و پرورش مشهد</a>
+                    <a href="#">فلان</a>
+                    <a href="#">فلان</a>
+                </div>
+            </div>
+            <div id="footer_middle">
+                <div class="footer_text">
+                    <a href="#"><img src="{% static 'images/t_logo.png' %}" alt="telegram" height="30px" width="30px"></a>
+                    <a href="#"><img src="{% static 'images/instagram.png' %}" alt="telegram" height="30px" width="30px"></a>
+                    <p>آدرس:نستیبمن</p>
+                    <p>شماره تلفن:3938493</p>
+                </div>
+            </div>
+            <div id="footer_bottom">
+                <p>این سایت توسط محمد کاظمی و امیرحسین عبداللهی ساخته شده است.</p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}دانش آموزان برتر{% endblock title %}
+
+{% block container %}
+            <div id="main_top_students">
+                <div class="article_header">
+                    <h2>دانش آموزان برتر</h2>
+                </div>
+                {% for top_student in top_students %}
+                <div class="card">
+                    <div class="card_img">
+                        <img src="/media/{{ top_student.image }}" alt="{{ top_student.first_name }} {{ top_student.last_name }}" height="250px" width="100%">
+                        <span class="card_name">{{ top_student.first_name }} {{ top_student.last_name }}</span>
+                    </div>
+                    <div class="card_description">
+                        <p>معلم : {{ top_student.teacher }}<br>
+                        کلاس : {{ top_student.grade }}</p>
+                    </div>    
+                </div>
+                {% endfor %}
+            </div>
+{% endblock container %}

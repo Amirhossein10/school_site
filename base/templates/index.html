@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}دبستان فرهنگ{% endblock title %}
+
+{% block container %}
+            <div id="top_students">
+                <div class="article_header">
+                    <h2>دانش آموزان برتر</h2>
+                </div>
+                {% for top_student in top_students %}
+                <div class="card">
+                    <div class="card_img">
+                        <img src="/media/{{ top_student.image }}" alt="{{ top_student.first_name }} {{ top_student.last_name }}" height="250px" width="100%">
+                        <span class="card_name">{{ top_student.first_name }} {{ top_student.last_name }}</span>
+                    </div>
+                    <div class="card_description">
+                        <p>معلم : {{ top_student.teacher.first_name }} {{ top_student.teacher.last_name }} <br>
+                        کلاس : {{ top_student.grade }}</p>
+                    </div>    
+                </div>
+                {% endfor %}
+                <div class="article_link">
+                    <a href="top_teachers.html">بیشتر</a>
+                </div>
+            </div>
+            <div id="top_teachers">
+                <div class="article_header">
+                    <h2>معلمان برتر</h2>
+                </div>
+                {% for top_teacher in top_teachers %}
+                <div class="card">
+                    <div class="card_img">
+                        <img src="/media/{{ top_teacher.image }}" alt="{{ top_teacher.first_name }} {{ top_teacher.last_name }}" height="250px" width="100%">
+                        <span class="card_name">{{ top_teacher.first_name }} {{ top_teacher.last_name }}</span>
+                    </div>
+                    <div class="card_description">
+                        <p>معلم کلاس : {{ top_teacher.grade }}</p>
+                    </div>    
+                </div>
+                {% endfor %}
+                <!-- <div class="article_link">
+                    <a href="top_teachers.html">بیشتر</a>
+                </div> -->
+            </div>
+            <div id="gallery">
+                <div class="article_header">
+                    <h2>گالری</h2>
+                </div>
+                {% for picture in pictures %}
+                <div class="image">
+                    <img src="/media/{{ picture.image }}" alt="دبستان فرهنگ" height="250px" width="100%">
+                </div>
+                {% endfor %}
+                <div id="article_link_g">
+                    <a href="gallery.html">بیشتر</a>
+                </div>
+            </div>
+            <div id="news">
+                <div class="article_header">
+                    <h2>اخبار</h2>
+                </div>
+                {% for new in news %}
+                <div class="news_card">
+                    <span class="news_card_name">{{ new.title }}</span>
+                    <div class="news_card_description">
+                        <p>{{ new.text }}</p>
+                    </div>    
+                </div>
+                {% endfor %}
+                <div class="article_link">
+                    <a href="news.html">بیشتر</a>
+                </div>
+            </div>
+{% endblock container %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}گالری{% endblock title %}
+
+{% block container %}
+            <div id="main_gallery">
+                <div class="article_header">
+                    <h2>گالری</h2>
+                </div>
+                {% for picture in pictures %}
+                <div class="image">
+                    <img src="/media/{{ picture.image }}" alt="دبستان فرهنگ" height="250px" width="100%">
+                </div>
+                {% endfor %}
+            </div>
+{% endblock container %}
+
+
+    
