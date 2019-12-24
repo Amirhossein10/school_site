@@ -8,7 +8,9 @@ pip install django==2.2.7
 سپس در پوشه سایت رفته و مراحل زیر را انجام دهید:
 
 python manage.py migrate
+
 python manage.py makemigrations
+
 python manage.py migrate
 
 برای ایجاد یوزر از دستور زیر استفاده کنید:
